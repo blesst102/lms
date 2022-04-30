@@ -1,0 +1,99 @@
+<section class="main_content dashboard_part large_header_bg">
+      
+     <!--/ menu  -->
+     <div class="main_content_iner overly_inner ">
+         <div class="container-fluid p-0 ">
+             <!-- page title  -->
+             <div class="row">
+                 <div class="col-12">
+                     <div class="page_title_box d-flex flex-wrap align-items-center justify-content-between">
+                         <div class="page_title_left d-flex align-items-center">
+                             <h3 class="f_s_25 f_w_700 dark_text mr_30" >Books</h3>
+                             <ol class="breadcrumb page_bradcam mb-0">
+                                 <li class="breadcrumb-item"><a href="javascript:void(0);">New</a></li>
+                             </ol>
+                         </div>
+                         <div class="page_title_right">
+                             
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="row ">
+                 <div class="col-xl-12 ">
+                     <div class="white_card mb_30 card_height_100">
+                         <div class="white_card_header">
+                             <div class="row align-items-center justify-content-between flex-wrap">
+                                 <div class="col-lg-4">
+                                     <div class="main-title">
+                                         <h3 class="m-0">Add New Book</h3>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-4 text-right d-flex justify-content-end">
+                                
+                                 </div>
+                                 
+                             </div>
+                             <%= form_with(model: book) do |form| %>
+                              <% if book.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+                            
+                                  <ul>
+                                    <% book.errors.each do |error| %>
+                                      <li><%= error.full_message %></li>
+                                    <% end %>
+                                  </ul>
+                                </div>
+                              <% end %>
+                            <div class="row flex-lg-row">
+                              <div class="col-lg-3">
+                              <div class="field">
+                                <label><%= form.label :title %></label>
+                                <%= form.text_field :title, class: 'form-control' %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <label><%= form.label :isbn %></label>
+                                <%= form.text_field :isbn, class: 'form-control' %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <label><%= form.label :author %></label>
+                                <%= form.text_field :author, class: 'form-control' %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <label><%= form.label :number %></label>
+                                <%= form.text_field :number, class: 'form-control' %>
+                              </div>
+                            </div>
+                              <div class="field">
+                                <label><%= form.label :condition %></label>
+                                <%= form.text_field :condition, class: 'form-control' %>
+                              </div>
+                            
+                              <div class="actions">
+                                <%= form.submit class: 'btn btn-primary'%>
+                                <%= link_to 'Back', books_path, class: 'btn btn-outline-primary' %>
+                              </div>
+                            <% end %>
+                            </div>
+                            </div>
+                         </div>
+                         <div class="white_card_body">
+                             <div id="management_bar"></div>
+                         </div>
+                     </div>
+                 </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

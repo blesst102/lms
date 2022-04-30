@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @issue.student_id %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @issue.room_id %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @issue.book_id %>
+</p>
+
+<p>
+  <strong>Issuedate:</strong>
+  <%= @issue.issuedate %>
+</p>
+
+<p>
+  <strong>Collectiondate:</strong>
+  <%= @issue.collectiondate %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @issue.status %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @issue.comment %>
+</p>
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

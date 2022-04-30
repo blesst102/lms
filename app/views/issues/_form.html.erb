@@ -1,0 +1,115 @@
+<section class="main_content dashboard_part large_header_bg">
+      
+     <!--/ menu  -->
+     <div class="main_content_iner overly_inner ">
+         <div class="container-fluid p-0 ">
+             <!-- page title  -->
+             <div class="row">
+                 <div class="col-12">
+                     <div class="page_title_box d-flex flex-wrap align-items-center justify-content-between">
+                         <div class="page_title_left d-flex align-items-center">
+                             <h3 class="f_s_25 f_w_700 dark_text mr_30" >Books</h3>
+                             <ol class="breadcrumb page_bradcam mb-0">
+                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Issue a book</a></li>
+                             </ol>
+                         </div>
+                         <div class="page_title_right">
+                             
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="row ">
+                 <div class="col-xl-12 ">
+                     <div class="white_card mb_30 card_height_100">
+                         <div class="white_card_header">
+                             <div class="row align-items-center justify-content-between flex-wrap">
+                                 <div class="col-lg-4">
+                                     <div class="main-title">
+                                         <h3 class="m-0">Issue A Book</h3>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-4 text-right d-flex justify-content-end">
+                                
+                                 </div>
+                                 
+                             </div>
+                             <%= form_with(model: issue) do |form| %>
+                              <% if issue.errors.any? %>
+                                <div id="error_explanation">
+                                  <h2><%= pluralize(issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+                            
+                                  <ul>
+                                    <% issue.errors.each do |error| %>
+                                      <li><%= error.full_message %></li>
+                                    <% end %>
+                                  </ul>
+                                </div>
+                              <% end %>
+                            
+                            <div class="row flex-lg-row">
+                              <div class="col-lg-3">
+                              <div class="field">
+                                <label><%= form.label :student_id %></label>
+                                <%= form.select(:student_id, Student.all.collect {|s| [s.indexnumber, s.id]},  {prompt: "Select"}, {class: 'form-control'}) %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <label>Class</label>
+                                <%= form.select(:room_id, Room.all.collect {|r| [r.name, r.id]},  {prompt: "Select"}, {class: 'form-control'}) %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <%= form.label :book_id %>
+                                <%= form.select(:book_id, Book.all.collect {|b| [b.title, b.id]},  {prompt: "Select"}, {class: 'form-control'}) %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <label>Book Issued Date</label>
+                                <%= form.date_field :issuedate, class: 'form-control' %>
+                              </div>
+                            </div>
+                            </div>
+                            <div class="row flex-lg-row">
+                              <div class="col-lg-3">
+                              <div class="field">
+                                <label>Book Collected Date</label>
+                                <%= form.date_field :collectiondate, class: 'form-control' %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <label><%= form.label :status %></label>
+                                <%= form.select :status, [["Collected", 'Collected'], ["Returned", 'Returned']], { :selected => false }, class: 'form-select', required: true %>
+                              </div>
+                            </div>
+                            <div class="col-lg-3">
+                              <div class="field">
+                                <label><%= form.label :comment %></label>
+                                <%= form.text_field :comment, class: 'form-control', placeholder: 'eg damaged' %>
+                              </div>
+                            </div>
+                            </div>
+                              <div class="actions">
+                               <%= form.submit "Issue a book", class: 'btn btn-primary'%>
+                              </div>
+                            <% end %>
+                            </div>
+                         </div>
+                         <div class="white_card_body">
+                             <div id="management_bar"></div>
+                         </div>
+                     </div>
+                 </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

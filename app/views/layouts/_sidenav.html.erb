@@ -1,0 +1,36 @@
+ 
+<!-- sidebar  -->
+<nav class="sidebar">
+    <div class="logo d-flex justify-content-between">
+        <a class="large_logo" href="/"><%= image_tag(image_path('newlogo.png')) %></a>
+        <div class="sidebar_close_icon d-lg-none">
+            <i class="ti-close"></i>
+        </div>
+    </div>
+    <ul id="sidebar_menu">
+        <li class="">
+            <a class="has-arrow" aria-expanded="false">
+                <div class="nav_icon_small">
+                <%= link_to root_path do %>
+                  <i class="fa fa-dashboard icons"></i> &nbsp;&nbsp;Dashboard</a>
+                  <% end %>
+                </div>
+              </a>
+           
+             <%= link_to books_path do %>
+              <i class="fa fa-book icons"></i> &nbsp;&nbsp;Books</a>
+              <% end %>
+              <%= link_to new_book_path do %>
+              <i class="fa fa-plus icons"></i> &nbsp;&nbsp;Add Book</a>
+              <% end %>
+              <%= link_to issues_path do %>
+              <i class="fa fa-bar-chart icons"></i> &nbsp;&nbsp;Books Issued</a>
+              <% end %>
+              <%= link_to new_issue_path do %>
+              <i class="fa fa-handshake-o icons"></i> &nbsp;&nbsp;Issue Book</a>
+              <% end %>
+              <a href="#"class="icon-a"><i class="fa fa-users icons"></i> &nbsp;&nbsp;Magazine</a>
+            
+        </li>         
+</nav>
+ <!--/ sidebar  -->

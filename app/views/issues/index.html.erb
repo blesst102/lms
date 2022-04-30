@@ -1,0 +1,89 @@
+<section class="main_content dashboard_part large_header_bg"> 
+     <!--/ menu  -->
+     <div class="main_content_iner overly_inner ">
+         <div class="container-fluid p-0 ">
+             <!-- page title  -->
+             <div class="row">
+                 <div class="col-12">
+                     <div class="page_title_box d-flex flex-wrap align-items-center justify-content-between">
+                         <div class="page_title_left d-flex align-items-center">
+                             <h3 class="f_s_25 f_w_700 dark_text mr_30" >Books</h3>
+                             <ol class="breadcrumb page_bradcam mb-0">
+                                 <li class="breadcrumb-item"><a href="javascript:void(0);">All Records</a></li>
+                             </ol>
+                         </div>
+                         <div class="page_title_right">
+                             
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="row ">
+                 <div class="col-xl-12 ">
+                     <div class="white_card mb_30 card_height_100">
+                         <div class="white_card_header">
+                             <div class="row align-items-center justify-content-between flex-wrap">
+                                 <div class="col-lg-4">
+                                     <div class="main-title">
+                                         <h3 class="m-0"></h3>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-4 text-right d-flex justify-content-end">
+                                
+                                 </div>
+                                 
+                             </div>
+                             <table class="table">
+                              <thead>
+                              <tr>
+                              <th>Student</th>
+                              <th>Room</th>
+                              <th>Book</th>
+                              <th>Issuedate</th>
+                              <th>Collectiondate</th>
+                              <th>Status</th>
+                              <th>Comment</th>
+                              <th colspan="3"></th>
+                            </tr>
+                          </thead>
+                        
+                          <tbody>
+                            <% @issues.each do |issue| %>
+                              <tr>
+                                <td><%= issue.student.indexnumber %></td>
+                                <td><%= issue.room.name %></td>
+                                <td><%= issue.book.title %></td>
+                                <td><%= issue.issuedate %></td>
+                                <td><%= issue.collectiondate %></td>
+                                <td><%= issue.status %></td>
+                                <td><%= issue.comment %></td>
+                                <td><%= link_to 'Edit book', edit_issue_path(issue), class: 'btn btn-outline-primary' %></td>
+                                <td><%= link_to 'Delete', issue, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+                              </tr>
+                            <% end %>
+                          </tbody>
+                            <%#== pagy_bootstrap_nav(@pagy) %>
+                            <br>
+
+                            <%= link_to 'Issue a book', new_issue_path, class: 'btn btn-primary'%>
+                              </div>
+                              </div>
+                         </div>
+                         <div class="white_card_body">
+                             <div id="management_bar"></div>
+                         </div>
+                     </div>
+                 </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+

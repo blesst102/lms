@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  room: one
+  book: one
+  issuedate: MyString
+  collectiondate: MyString
+  status: MyString
+  comment: MyString
+
+two:
+  student: two
+  room: two
+  book: two
+  issuedate: MyString
+  collectiondate: MyString
+  status: MyString
+  comment: MyString

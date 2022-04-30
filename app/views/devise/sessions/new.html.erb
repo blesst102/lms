@@ -1,0 +1,33 @@
+<div class="modal modal-signin position-static d-block py-5" tabindex="-1" role="dialog" id="modalSignin">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <h2 class="fw-bold mb-0">Sign-in</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body p-5 pt-0">
+        <!--Form for signing in a user to the dashboard -->
+         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <form class="">
+          <div class="form-floating mb-3">
+            <!--email field in a user -->
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <!--password field in a user -->
+            <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <!--Submit button -->
+            <%= f.submit "Sign in", class: 'w-100 mb-2 btn btn-lg rounded-4 btn-primary' %>
+                <p class="mt-5 mb-3 text-muted">© 2021-LMS</p>
+          </form>
+        <% end %>
+         <!--End of Form for signing in a user to the dashboard -->
+      </div>
+    </div>
+  </div>
+</div>
+                
